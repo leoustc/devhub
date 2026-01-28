@@ -1,4 +1,4 @@
-name: Release PKG
+name: Release DMG
 
 on:
   push:
@@ -9,23 +9,33 @@ permissions:
   contents: write
 
 jobs:
-  upload-pkg:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Locate PKG
-        id: pkg
+      - name: Resolve DMG URL
+        id: dmg
         run: |
-          PKG_FILE="$(ls *.pkg | head -n 1)"
-          if [ -z "$PKG_FILE" ]; then
-            echo "No .pkg file found in repo root."
-            exit 1
-          fi
-          echo "pkg=$PKG_FILE" >> "$GITHUB_OUTPUT"
+          RAW_TAG="${GITHUB_REF_NAME}"
+          TAG_NAME="${RAW_TAG#v}"
+          DMG_URL="https://tools.leoustc.com/DevHub-${TAG_NAME}-arm64.dmg"
+          echo "url=$DMG_URL" >> "$GITHUB_OUTPUT"
+          echo "file=DevHub-${TAG_NAME}-arm64.dmg" >> "$GITHUB_OUTPUT"
 
-      - name: Upload release asset
+      - name: Download DMG
+        run: |
+          curl -fL "${{ steps.dmg.outputs.url }}" -o "${{ steps.dmg.outputs.file }}"
+
+      - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ steps.pkg.outputs.pkg }}
+          body: |
+            DMG download:
+            ${{ steps.dmg.outputs.url }}
+
+      - name: Upload DMG asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.dmg.outputs.file }}
