@@ -72,9 +72,3 @@ Use:
 5. Re‑click to reuse the same window/session.
 
 ---
-
----
-
-## License
-
-MIT
