@@ -28,7 +28,7 @@ Best use: run **code-server** on your remote host and open it in DevHub. Everyth
 
 ## How it works (high level)
 
-- Hosts come from your `~/.ssh/config`
+- Hosts come from your `~/.ssh/config` (including ProxyJump/ProxyCommand)
 - Each service (port + protocol + alias) gets its **own SSH forward**
 - Each service opens in its **own WebView window**
 - DevHub keeps tunnels alive and restores them if they drop
@@ -52,6 +52,7 @@ They are complementary:
 - **Full web experience** per service (no iframe)
 - **One SSH forward per service** for isolation and stability
 - **Auto‑reconnect** for dropped tunnels
+- **SSH terminal per host** with shared tunnels and status footer
 - **Tray menu** for quick access to active sessions
 - **No VPN required**
 - **Best with code-server**: run remote, manage locally
@@ -72,3 +73,7 @@ Use:
 5. Re‑click to reuse the same window/session.
 
 ---
+
+## Changelog
+
+See `CHANGELOG.md`.
