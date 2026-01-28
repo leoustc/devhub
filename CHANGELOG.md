@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.0
+
+- ProxyCommand prompts per host with allowlist stored in status.
+- Port tunnels target remote `localhost` by default (better for Docker).
+- Reconnect tunnel action per port.
+- Search filter for SSH hosts.
+- Terminal footer refined for connection/tunnel metrics.
+
 ## 2.1.0
 
 - SSH terminal shares the same connection as tunnels per host.
