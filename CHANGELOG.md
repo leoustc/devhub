@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.5.0
+
+- Quick URLs: save/open standalone webviews without a host.
+- Tray menu reorganized: Active Sessions vs Services + Quick Links.
+- Search filter for SSH hosts.
+- Reconnect tunnel action per port.
+- ProxyCommand prompt per host with allowlist.
+
 ## 2.3.0
 
 - ProxyCommand prompts per host with allowlist stored in status.

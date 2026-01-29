@@ -53,6 +53,7 @@ They are complementary:
 - **One SSH forward per service** for isolation and stability
 - **Auto‑reconnect** for dropped tunnels
 - **SSH terminal per host** with shared tunnels and status footer
+- **Quick URLs**: open and reuse full webviews without a host
 - **Tray menu** for quick access to active sessions
 - **No VPN required**
 - **Best with code-server**: run remote, manage locally
