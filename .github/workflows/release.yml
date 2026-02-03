@@ -24,18 +24,9 @@ jobs:
           echo "url=$DMG_URL" >> "$GITHUB_OUTPUT"
           echo "file=DevHub-${TAG_NAME}-arm64.dmg" >> "$GITHUB_OUTPUT"
 
-      - name: Download DMG
-        run: |
-          curl -fL "${{ steps.dmg.outputs.url }}" -o "${{ steps.dmg.outputs.file }}"
-
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
           body: |
             DMG download:
             ${{ steps.dmg.outputs.url }}
-
-      - name: Upload DMG asset
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ steps.dmg.outputs.file }}

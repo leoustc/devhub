@@ -7,8 +7,14 @@ release:
 	if [ -z "$$VERSION" ]; then echo "VERSION is empty."; exit 1; fi; \
 	TAG="v$$VERSION"; \
 	echo "Using tag $$TAG"; \
-	if git rev-parse "refs/tags/$$TAG" >/dev/null 2>&1; then echo "Tag $$TAG already exists locally. Skipping."; exit 0; fi; \
-	if git ls-remote --tags origin | grep -q "refs/tags/$$TAG$$"; then echo "Tag $$TAG already exists on remote. Skipping."; exit 0; fi; \
+	if git rev-parse "refs/tags/$$TAG" >/dev/null 2>&1; then \
+		echo "Tag $$TAG exists locally. Deleting."; \
+		git tag -d "$$TAG"; \
+	fi; \
+	if git ls-remote --tags origin | grep -q "refs/tags/$$TAG$$"; then \
+		echo "Tag $$TAG exists on remote. Deleting."; \
+		git push origin ":refs/tags/$$TAG"; \
+	fi; \
 	git add .; \
 	if git diff --cached --quiet; then echo "No changes to commit."; else git commit -m "release $$TAG"; fi; \
 	git tag "$$TAG"; \
