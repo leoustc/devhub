@@ -31,6 +31,7 @@ jobs:
           draft: false
           prerelease: false
           make_latest: true
+          overwrite: true
           body: |
             DevHub ${{ github.ref_name }} is ready.
 
