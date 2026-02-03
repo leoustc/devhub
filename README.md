@@ -6,13 +6,11 @@ DevHub is a desktop app that makes remote dev services feel local — with **ful
 
 ---
 
-## What’s new in 2.7.0
+## What’s new in 2.7.2
 
 ![DevHub 2.7.0](./v2.7.0.png)
 
-- Main window with integrated **SSH terminal tabs**
-- Sidebar **protocol filters** (SSH / HTTP / HTTPS)
-- Collapsible **Groups** and **Quick URLs**
+- **tmux** entry per host (persistent sessions in terminal tabs)
 
 ---
 

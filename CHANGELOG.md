@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.7.2
+
+- Added **tmux** entry per host (open persistent sessions via terminal tabs).
+
 ## 2.7.0
 
 - Main window redesigned: left sidebar + integrated SSH terminal tabs.
