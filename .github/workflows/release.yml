@@ -27,9 +27,15 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
+          name: DevHub ${{ github.ref_name }}
           body: |
+            DevHub ${{ github.ref_name }} is ready.
+
             DMG download:
             ${{ steps.dmg.outputs.url }}
+
+            Changelog:
+            https://github.com/${{ github.repository }}/blob/main/CHANGELOG.md
 
       - name: Download DMG
         run: |

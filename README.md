@@ -1,16 +1,13 @@
 # DevHub
 
-DevHub is a desktop app that makes remote dev services feel local — with **full browser windows per service**, **SSH port forwards managed for you**, and **no VPN required**.
+DevHub makes remote dev services feel local — **full web windows per service**, **SSH tunnels managed for you**, and **no VPN required**.
 
-![DevHub demo](./demo.png)
-
----
 
 ## What’s new in 2.7.2
 
 ![DevHub 2.7.0](./v2.7.0.png)
 
-- **tmux** entry per host (persistent sessions in terminal tabs)
+- **tmux per host**: launch persistent terminal sessions directly from the sidebar.
 
 ---
 
@@ -18,17 +15,17 @@ DevHub is a desktop app that makes remote dev services feel local — with **ful
 
 Working on remote hosts usually means:
 - remembering `ssh -L` commands
-- juggling port numbers
+- juggling ports and aliases
 - losing sessions when tunnels drop
 - sharing one browser session across multiple services
 
-DevHub removes all of that. You select a host, add a port, and DevHub opens the service in its own full WebView window — with cookies, auth, WebSockets, and storage intact.
+DevHub removes the busywork. Choose a host, add a port, and DevHub opens the service in its own **full WebView window** — cookies, auth, WebSockets, and storage all intact.
 
 ---
 
 ## Why I built it
 
-I wanted a workflow where **services are first‑class**, not just terminals and files. VS Code is great for code, but it still leaves you managing tunnels and services manually. DevHub makes the **service layer** effortless.
+I wanted a workflow where **services are first‑class**, not just terminals and files. VS Code is great for code, but it still leaves you managing tunnels and service windows manually. DevHub makes the **service layer** effortless.
 
 Best use: run **code-server** on your remote host and open it in DevHub. Everything runs remotely, but it’s **managed locally** with clean, isolated windows.
 
@@ -61,6 +58,7 @@ They are complementary:
 - **One SSH forward per service** for isolation and stability
 - **Auto‑reconnect** for dropped tunnels
 - **SSH terminal tabs** inside the main window, shared tunnels and status footer
+- **tmux sessions** per host (persistent terminals)
 - **Quick URLs**: open and reuse full webviews without a host
 - **Protocol filters** (SSH / HTTP / HTTPS) in the sidebar
 - **Tray menu** for quick access to active sessions
