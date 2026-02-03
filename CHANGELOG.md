@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.7.0
+
+- Main window redesigned: left sidebar + integrated SSH terminal tabs.
+- Sidebar filters for protocol (SSH/HTTP/HTTPS) with auto-expand on match.
+- Collapsible Groups and Quick URLs sections.
+- Terminal tabs resize fixes + hidden tab scrollbar.
+- Stronger SSH keepalive defaults (honors SSH config when set).
+
 ## 2.5.0
 
 - Quick URLs: save/open standalone webviews without a host.

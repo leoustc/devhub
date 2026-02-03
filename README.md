@@ -6,6 +6,14 @@ DevHub is a desktop app that makes remote dev services feel local — with **ful
 
 ---
 
+## What’s new in 2.7.0
+
+- Main window with integrated **SSH terminal tabs**
+- Sidebar **protocol filters** (SSH / HTTP / HTTPS)
+- Collapsible **Groups** and **Quick URLs**
+
+---
+
 ## The problem it solves
 
 Working on remote hosts usually means:
@@ -52,8 +60,9 @@ They are complementary:
 - **Full web experience** per service (no iframe)
 - **One SSH forward per service** for isolation and stability
 - **Auto‑reconnect** for dropped tunnels
-- **SSH terminal per host** with shared tunnels and status footer
+- **SSH terminal tabs** inside the main window, shared tunnels and status footer
 - **Quick URLs**: open and reuse full webviews without a host
+- **Protocol filters** (SSH / HTTP / HTTPS) in the sidebar
 - **Tray menu** for quick access to active sessions
 - **No VPN required**
 - **Best with code-server**: run remote, manage locally
