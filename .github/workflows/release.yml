@@ -30,3 +30,12 @@ jobs:
           body: |
             DMG download:
             ${{ steps.dmg.outputs.url }}
+
+      - name: Download DMG
+        run: |
+          curl -fL "${{ steps.dmg.outputs.url }}" -o "${{ steps.dmg.outputs.file }}"
+
+      - name: Upload DMG asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.dmg.outputs.file }}
