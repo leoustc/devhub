@@ -3,11 +3,12 @@
 DevHub makes remote dev services feel local — **full web windows per service**, **SSH tunnels managed for you**, and **no VPN required**.
 
 
-## What’s new in 2.7.2
+## What’s new in 2.7.3
 
 ![DevHub 2.7.0](./v2.7.0.png)
 
-- **tmux per host**: launch persistent terminal sessions directly from the sidebar.
+- **tmux per host**: shared session per group for persistent terminals.
+- Sidebar clock (HH:MM:SS) in the title row.
 
 ---
 

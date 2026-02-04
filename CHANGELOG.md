@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.3
+
+- Sidebar clock (HH:MM:SS) in the title row.
+- Tmux session now shared per host (single session per group).
+
 ## 2.7.2
 
 - Added **tmux** entry per host (open persistent sessions via terminal tabs).
